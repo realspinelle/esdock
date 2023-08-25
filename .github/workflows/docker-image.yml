@@ -13,6 +13,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the hello-docker Docker image
         run: |
+               cd ./bun
                docker build . --tag ghcr.io/realspinelle/esdock:bun
                docker run ghcr.io/realspinelle/esdock:bun
                docker push ghcr.io/realspinelle/esdock:bun
